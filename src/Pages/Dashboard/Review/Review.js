@@ -22,6 +22,8 @@ const Review = () => {
             <input
               type="number"
               placeholder="Your Rating(0-5)"
+              min="0"
+              max="5"
               className="p-3 rounded-md border border-pink-200 focus:border-pink-500 focus:outline-none"
             />
             <button

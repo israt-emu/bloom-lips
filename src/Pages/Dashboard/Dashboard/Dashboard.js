@@ -149,7 +149,7 @@ const Dashboard = () => {
           <div className="w-full">
             {/* route for nesting path  */}
             <Switch>
-              <Route exact path={path}>
+              <Route path={path}>
                 {admin ? <ManageOrders /> : <MyOrders />}
               </Route>
               <Route path={`${path}/pay`}>
