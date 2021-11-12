@@ -29,7 +29,10 @@ const Explore = () => {
   return (
     <div>
       <Navigation />
-      <div className="text-center container mx-auto py-12">
+      <div className="md:w-11/12 w-4/5 mx-auto py-12">
+        <h1 className="text-center font-semibold text-3xl mt-4 mb-12">
+          Explore Our Latest Products
+        </h1>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
           {products.map((product) => (
             <Product key={product._id} product={product}></Product>

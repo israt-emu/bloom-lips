@@ -24,17 +24,17 @@ const Dashboard = () => {
   return (
     <div>
       <div>
-        <div className="flex">
+        <div className="lg:flex">
           <div>
             <button
-              className="rounded border-2 border-pink-600 px-3 py-1 lg:hidden block"
+              className="rounded border-2 border-pink-600 px-3 py-1 lg:hidden block ml-3 mt-4"
               onClick={() => setIsOpen(true)}
             >
               <i className="fas fa-bars text-pink-600"></i>
             </button>
           </div>
           <div
-            className={`h-full p-3 space-y-2 w-60 bg-pink-600 text-white transition duration-700 ease-in-out lg:block ${
+            className={`h-full p-3 space-y-2 w-72 bg-pink-600 text-white transition duration-700 ease-in-out lg:block ${
               isOpen ? "block" : "hidden"
             } absolute top-0 left-0 lg:static`}
           >
@@ -45,7 +45,7 @@ const Dashboard = () => {
                 className="w-12 h-12 rounded-full bg-coolGray-500"
               />
               <div>
-                <h2 className="text-lg font-semibold">{user?.displayName}</h2>
+                <h2 className="text-md font-semibold">{user?.displayName}</h2>
               </div>
               <div>
                 <button
@@ -57,7 +57,10 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="divide-y divide-coolGray-300">
-              <ul className="pt-2 pb-4 space-y-1 text-sm">
+              <ul
+                className="pt-2 pb-4 space-y-1 text-sm"
+                onClick={() => setIsOpen(false)}
+              >
                 <li className="bg-coolGray-100 text-coolGray-900">
                   <a
                     href="/"
@@ -99,7 +102,7 @@ const Dashboard = () => {
                 </li>
               </ul>
               {/* for admin  */}
-              <ul>
+              <ul onClick={() => setIsOpen(false)}>
                 <li>
                   <Link
                     to={`${url}/manageorders`}
@@ -135,6 +138,14 @@ const Dashboard = () => {
               </ul>
               <ul className="pt-4 pb-2 space-y-1 text-sm">
                 <li>
+                  <Link
+                    to="/home"
+                    className="flex items-center p-2 space-x-3 rounded-md"
+                  >
+                    <span>Home</span>
+                  </Link>
+                </li>
+                <li>
                   <a
                     href="/"
                     className="flex items-center p-2 space-x-3 rounded-md"
@@ -153,7 +164,7 @@ const Dashboard = () => {
               </ul>
             </div>
           </div>
-          <div>
+          <div className="w-full">
             {/* route for nesting path  */}
             <Switch>
               <Route exact path={path}>

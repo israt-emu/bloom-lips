@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useLocation, useHistory } from "react-router";
@@ -8,6 +8,7 @@ import Navigation from "../Shared/Navigation/Navigation";
 
 const Register = () => {
   const { registration, error } = useAuth();
+
   const location = useLocation();
   const history = useHistory();
   const { register, handleSubmit, reset } = useForm();
@@ -15,6 +16,7 @@ const Register = () => {
     registration(data.name, data.email, data.password, history);
     reset();
   };
+
   return (
     <>
       <Navigation></Navigation>
@@ -55,6 +57,7 @@ const Register = () => {
               </div>
             </form>
             <h1 className="text-center text-red-500">{error}</h1>
+
             <Link to="/login">
               <h1 className="text-center font-semibold my-3">
                 Already Registered?Please Login

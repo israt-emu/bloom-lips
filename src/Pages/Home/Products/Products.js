@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Product from "../Product/Product";
 
 const Products = () => {
@@ -27,11 +28,21 @@ const Products = () => {
     );
   }
   return (
-    <div className="text-center container mx-auto py-12">
+    <div className="md:w-11/12 w-4/5 mx-auto py-12">
+      <h1 className="text-center text-3xl font-semibold mt-6 mb-10">
+        Our Latest Products
+      </h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
         {products.map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}
+      </div>
+      <div className="text-center mt-8">
+        <Link to="/explore">
+          <button className="text-pink-600 border-2 border-pink-600 px-3 py-2 text-md rounded shadow-lg hover:bg-pink-600 hover:text-white transition ease-in-out">
+            Explore More
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -25,6 +25,7 @@ const useFirebase = () => {
       .then((result) => {
         setUser(result.user);
         setError("");
+        saveUser(result.user.email, result.user.displayName, "PUT");
         const redirect_uri = location.state?.from || "/home";
         history.push(redirect_uri);
       })
@@ -41,6 +42,7 @@ const useFirebase = () => {
         const newUser = { email, displayName: name };
         setUser(newUser);
         updateInfo(name);
+        saveUser(email, name, "POST");
         history.push("/home");
         setError("");
       })
@@ -104,6 +106,26 @@ const useFirebase = () => {
       setIsLoading(false);
     });
   }, []);
+  //save or update user to database
+  const saveUser = (email, displayName, method) => {
+    const user = { email, displayName };
+    fetch("https://blooming-brushlands-04717.herokuapp.com/users", {
+      method: method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.upsertedId || data.insertedId) {
+          alert("User Created Successfully");
+        } else if (data.matchedCount) {
+          alert("User Updated Successfully");
+        }
+      });
+  };
   return {
     user,
     error,
