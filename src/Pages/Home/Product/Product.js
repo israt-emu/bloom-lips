@@ -11,7 +11,10 @@ const Product = ({ product }) => {
       <div className="pl-4 pt-2">
         <h1 className="font-semibold">
           Color:
-          <i className="fas fa-bahai text-lg" style={{ color: `${color}` }}></i>
+          <i
+            className="fas fa-bahai text-lg ml-2"
+            style={{ color: `${color}` }}
+          ></i>
         </h1>
         <h1 className="font-semibold my-1">{name}</h1>
         <h1>Price: ${price}</h1>

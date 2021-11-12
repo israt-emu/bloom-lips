@@ -23,7 +23,7 @@ const Login = () => {
     <>
       <Navigation></Navigation>
       <div className="login container mx-auto py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex align-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex items-center">
           <div>
             <h1 className="text-center font-bold text-2xl mb-3">
               Please Login

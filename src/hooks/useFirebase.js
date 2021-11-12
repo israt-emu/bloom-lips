@@ -16,6 +16,8 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [admin, setAdmin] = useState(false);
+  const [adminLoading, setAdminLoading] = useState();
   const googleProvider = new GoogleAuthProvider();
   const auth = getAuth();
   //sign in with google
@@ -126,9 +128,19 @@ const useFirebase = () => {
         }
       });
   };
+  //check admin
+  useEffect(() => {
+    setAdminLoading(true);
+    fetch(`http://localhost:5000/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin))
+      .finally(() => setAdminLoading(false));
+  }, [user?.email]);
   return {
     user,
     error,
+    admin,
+    adminLoading,
     googleSignIn,
     registration,
     loginWithEmailPass,
