@@ -28,14 +28,16 @@ const Products = () => {
     );
   }
   return (
-    <div className="md:w-11/12 w-4/5 mx-auto py-12">
+    <div className="md:w-4/5 w-11/12 mx-auto py-12">
       <h1 className="text-center text-3xl font-semibold mt-6 mb-10">
         Our Latest Products
       </h1>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
-        {products.map((product) => (
-          <Product key={product._id} product={product}></Product>
-        ))}
+      <div className="shadow-md p-5">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+          {products.map((product) => (
+            <Product key={product._id} product={product}></Product>
+          ))}
+        </div>
       </div>
       <div className="text-center mt-8">
         <Link to="/explore">

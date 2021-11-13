@@ -5,7 +5,8 @@ h4,
 h5,
 h6,
 a,
-button {
+button,
+li {
   font-family: "Libre Baskerville", serif;
 }
 p {

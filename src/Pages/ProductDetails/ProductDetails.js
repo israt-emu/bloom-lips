@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router";
 import PlaceOrder from "../PlaceOrder/PlaceOrder";
+import Footer from "../Shared/Footer/Footer";
 import Navigation from "../Shared/Navigation/Navigation";
 
 const ProductDetails = () => {
@@ -52,6 +53,7 @@ const ProductDetails = () => {
         </div>
         <PlaceOrder product={product}></PlaceOrder>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useLocation, useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.png";
+import Footer from "../Shared/Footer/Footer";
 import Navigation from "../Shared/Navigation/Navigation";
 
 const Login = () => {
@@ -75,6 +76,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

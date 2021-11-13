@@ -5,6 +5,7 @@ import { useLocation, useHistory } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.png";
 import Navigation from "../Shared/Navigation/Navigation";
+import Footer from "../Shared/Footer/Footer";
 
 const Register = () => {
   const { registration, error } = useAuth();
@@ -69,6 +70,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
