@@ -45,7 +45,7 @@ const useFirebase = () => {
         setUser(newUser);
         updateInfo(name);
         saveUser(email, name, "POST");
-        history.push("/dashboard");
+        history.push("/home");
         setError("");
       })
       .catch((err) => {
