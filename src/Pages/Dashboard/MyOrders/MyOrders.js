@@ -7,7 +7,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [change, setChange] = useState(false);
-
+  //get orders by user email
   useEffect(() => {
     fetch(
       `https://blooming-brushlands-04717.herokuapp.com/orders?email=${user?.email}`

@@ -7,6 +7,7 @@ const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [change, setChange] = useState(false);
+  //orders by all users
   useEffect(() => {
     fetch(`https://blooming-brushlands-04717.herokuapp.com/orders`)
       .then((res) => res.json())

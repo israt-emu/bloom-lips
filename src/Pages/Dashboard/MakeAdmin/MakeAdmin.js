@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 const MakeAdmin = () => {
   const { register, handleSubmit, reset } = useForm();
   const [isAdmin, setIsAdmin] = useState(false);
+  //make admin an user
   const onSubmit = (data) => {
     fetch("https://blooming-brushlands-04717.herokuapp.com/users/admin", {
       method: "PUT",

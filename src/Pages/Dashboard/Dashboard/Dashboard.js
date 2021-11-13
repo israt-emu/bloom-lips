@@ -6,7 +6,6 @@ import {
   Switch,
   Route,
   Link,
-  useParams,
   useRouteMatch,
 } from "react-router-dom";
 import Pay from "../Pay/Pay";
@@ -26,13 +25,16 @@ const Dashboard = () => {
     <div>
       <div>
         <div className="lg:flex">
-          <div>
+          <div className="flex items-center">
             <button
               className="rounded border-2 border-pink-600 px-3 py-1 lg:hidden block ml-3 mt-4"
               onClick={() => setIsOpen(true)}
             >
               <i className="fas fa-bars text-pink-600"></i>
             </button>
+            <h1 className="text-xl font-semibold lg:hidden block mt-3 ml-2">
+              {user?.displayName}
+            </h1>
           </div>
           <div
             className={`lg:h-screen h-full p-3 space-y-2 w-72 bg-pink-600 text-white transition duration-700 ease-in-out lg:block ${

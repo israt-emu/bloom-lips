@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useLocation, useHistory } from "react-router";
+import { useHistory } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import login from "../../images/login.png";
 import Navigation from "../Shared/Navigation/Navigation";
@@ -10,7 +10,6 @@ import Footer from "../Shared/Footer/Footer";
 const Register = () => {
   const { registration, error } = useAuth();
 
-  const location = useLocation();
   const history = useHistory();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {

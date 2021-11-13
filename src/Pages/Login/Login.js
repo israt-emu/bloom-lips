@@ -8,14 +8,16 @@ import Footer from "../Shared/Footer/Footer";
 import Navigation from "../Shared/Navigation/Navigation";
 
 const Login = () => {
-  const { user, googleSignIn, loginWithEmailPass, error } = useAuth();
+  const { googleSignIn, loginWithEmailPass, error } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const { register, handleSubmit, reset } = useForm();
+  //sign in with email pass
   const onSubmit = (data) => {
     loginWithEmailPass(data.email, data.password, location, history);
     reset();
   };
+  //sign in with google
   const handleGoogleSign = () => {
     googleSignIn(location, history);
   };

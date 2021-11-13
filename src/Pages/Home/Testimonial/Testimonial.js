@@ -8,6 +8,7 @@ import SingleSlide from "../SingleSlide/SingleSlide";
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
+  //getting reviews
   useEffect(() => {
     fetch("https://blooming-brushlands-04717.herokuapp.com/reviews")
       .then((res) => res.json())

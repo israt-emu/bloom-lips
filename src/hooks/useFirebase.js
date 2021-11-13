@@ -28,7 +28,7 @@ const useFirebase = () => {
         setUser(result.user);
         setError("");
         saveUser(result.user.email, result.user.displayName, "PUT");
-        const redirect_uri = location.state?.from || "/home";
+        const redirect_uri = location.state?.from || "/dashboard";
         history.push(redirect_uri);
       })
       .catch((err) => {
@@ -45,7 +45,7 @@ const useFirebase = () => {
         setUser(newUser);
         updateInfo(name);
         saveUser(email, name, "POST");
-        history.push("/home");
+        history.push("/dashboard");
         setError("");
       })
       .catch((err) => {
@@ -60,7 +60,7 @@ const useFirebase = () => {
       .then((result) => {
         setUser(result.user);
         setError("");
-        const redirect_uri = location.state?.from || "/home";
+        const redirect_uri = location.state?.from || "/dashboard";
         history.push(redirect_uri);
       })
       .catch((err) => {

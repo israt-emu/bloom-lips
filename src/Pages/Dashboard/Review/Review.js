@@ -7,6 +7,7 @@ const Review = () => {
   const { user } = useAuth();
   const [review, setReview] = useState(false);
   const { register, handleSubmit, reset } = useForm();
+  //saved review to database
   const onSubmit = (data) => {
     data.client = user.displayName;
     fetch("https://blooming-brushlands-04717.herokuapp.com/reviews", {

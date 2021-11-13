@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 const AddProduct = () => {
   const { register, handleSubmit, reset } = useForm();
   const [add, setAdd] = useState(false);
+  //add new product to database
   const onSubmit = (data) => {
     console.log(data);
     fetch("https://blooming-brushlands-04717.herokuapp.com/products", {
@@ -23,7 +24,7 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="lg:w-4/5 md:w-11/12 w-full mx-auto py-8 bg-pink-100 rounded shadow-md mt-10">
+    <div className="lg:w-4/5 md:w-11/12 w-11/12 mx-auto py-8 bg-pink-100 rounded shadow-md my-10">
       <h1 className="text-center md:text-3xl text-2xl font-semibold mb-4">
         Add a New Product
       </h1>

@@ -4,6 +4,7 @@ import ManageSingle from "../ManageSingle/ManageSingle";
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
   const [change, setChange] = useState(false);
+  //all products
   useEffect(() => {
     fetch(`https://blooming-brushlands-04717.herokuapp.com/products`)
       .then((res) => res.json())

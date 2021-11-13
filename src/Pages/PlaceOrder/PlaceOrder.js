@@ -31,7 +31,7 @@ const PlaceOrder = ({ product }) => {
   };
   return (
     <div>
-      <div className="lg:w-4/5 md:w-11/12 w-full mx-auto py-8 bg-pink-100 rounded shadow-md mb-10">
+      <div className="lg:w-4/5 md:w-11/12 w-11/12 mx-auto py-8 bg-pink-100 rounded shadow-md mb-10">
         <div className="text-center mt-4 mb-6">
           <h1 className="font-bold text-2xl mb-3">Place Your Order Here..</h1>
           <h2>Give your personal information to reach you</h2>
