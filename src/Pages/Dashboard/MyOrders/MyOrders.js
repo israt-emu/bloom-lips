@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import useAuth from "../../../hooks/useAuth";
 import SingleOrder from "../SingleOrder/SingleOrder";
 
 const MyOrders = () => {
-  const { user } = useAuth();
+  const {user} = useAuth();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [change, setChange] = useState(false);
   //get orders by user email
   useEffect(() => {
-    fetch(
-      `https://blooming-brushlands-04717.herokuapp.com/orders?email=${user?.email}`
-    )
+    fetch(`https://bloom-lips-server.onrender.com/orders?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -36,13 +34,7 @@ const MyOrders = () => {
         <h1 className="text-center font-semibold text-3xl mb-12">Your Order</h1>
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {orders.map((order) => (
-            <SingleOrder
-              key={order._id}
-              manage={false}
-              change={change}
-              setChange={setChange}
-              order={order}
-            ></SingleOrder>
+            <SingleOrder key={order._id} manage={false} change={change} setChange={setChange} order={order}></SingleOrder>
           ))}
         </div>
       </div>

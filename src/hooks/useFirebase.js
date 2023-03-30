@@ -1,15 +1,6 @@
 import initializeAuth from "../firebase/initialize-firebase";
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  updateProfile,
-} from "firebase/auth";
-import { useEffect, useState } from "react";
+import {GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile} from "firebase/auth";
+import {useEffect, useState} from "react";
 
 initializeAuth();
 const useFirebase = () => {
@@ -41,7 +32,7 @@ const useFirebase = () => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, pass)
       .then((result) => {
-        const newUser = { email, displayName: name };
+        const newUser = {email, displayName: name};
         setUser(newUser);
         updateInfo(name);
         saveUser(email, name, "POST");
@@ -110,8 +101,8 @@ const useFirebase = () => {
   }, []);
   //save or update user to database
   const saveUser = (email, displayName, method) => {
-    const user = { email, displayName };
-    fetch("https://blooming-brushlands-04717.herokuapp.com/users", {
+    const user = {email, displayName};
+    fetch("https://bloom-lips-server.onrender.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -131,9 +122,7 @@ const useFirebase = () => {
   //check admin
   useEffect(() => {
     setAdminLoading(true);
-    fetch(
-      `https://blooming-brushlands-04717.herokuapp.com/users/${user?.email}`
-    )
+    fetch(`https://bloom-lips-server.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin))
       .finally(() => setAdminLoading(false));
